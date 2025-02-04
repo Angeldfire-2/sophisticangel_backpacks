@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Descargas</title>
-    <link rel="stylesheet" href="/download.css">
-    <link rel="icon" type="image/png" href="/textures/ui/logo.ico">
+    <link rel="icon" type="image/png" href="https://cdn.glitch.global/604f16b8-e50b-40c9-b6a4-fef27f907be4/public%2Ftextures%2Fui%2Flogo.ico?v=1738152179766">
     <script src="https://kit.fontawesome.com/468299f106.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -29,4 +28,312 @@
     </main>
     <script src="/app.js"></script>
 </body>
+<style>
+    #downpe {
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        max-width: 95%;
+        transform: translate(-50%, -50%);
+        width: 620px;
+        display: flex;
+        flex-direction: column
+    }
+    #header{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        height: 90px;
+        box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.25), 0px 0px 16px 4px rgba(0, 0, 0, 0.25);
+        background-color: rgba(20,20,20,0.5);
+        border-radius: 8px;
+    }
+    
+    #logo_stack h1 {
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        color: rgb(255, 255, 255);
+        font-size: 100%;
+    }
+    
+    #button_download {
+        align-items: end;
+        flex-direction: column;
+        position: absolute;
+        display: flex;
+        width: 85%;
+        max-width: 740px;
+    }
+    
+    #logo {
+        width: 50px;
+        height: 50px;
+    }
+    
+    #logo_stack #text {
+        left: 10px;
+    }
+    
+    #logo_stack {
+        display: flex;
+        align-items: center;
+        width: 95%;
+    }
+    
+    #logo_stack_up {
+        display: flex;
+        align-items: center;
+        width: 90%;
+    }
+    
+    .download {
+        height: 50px;
+        width: 53px;
+    }
+    .download_ {
+        height: 50px;
+        width: 53px;
+    }
+    #space_text_image {
+        width: 10px;
+    }
+    
+    .download button {
+        border-radius: 6px;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        background-color: rgb(210, 30, 30);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        gap: 8px;
+        outline: none;
+        border: none;
+    }
+    .download button:hover {
+        cursor: pointer;
+        background-color: rgb(213, 108, 108);
+    }
+    
+    .download button img {
+        width: 20px;
+    }
+    .download_ button img {
+        width: 20px;
+    }
+    
+    
+    
+    
+    
+    .new {
+        background-color: rgba(20, 31, 30, .5);
+        border-style: solid;
+        border-color: rgba(0, 0, 0, .29);
+        border-width: 3px;
+        border-radius: 11px;
+        box-shadow: 0 4px 8px 2px rgba(0, 0, 0, .33);
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: left;
+    }
+    .downloadButtons {
+        margin-bottom: 8px;
+    }
+    .new li {
+        margin: 10px;
+        font-family:Verdana, Geneva, Tahoma, sans-serif
+    }
+    .new li.selected {
+        color: rgb(0, 255, 221);
+    }
+    
+    #home_button a{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 35px;
+        height: 35px;
+        border-radius: 11px;
+        box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.25), 0px 0px 16px 4px rgba(0, 0, 0, 0.25);
+        background-color: rgba(20,20,20,0.5);
+    }
+    #home_button a:hover{
+        box-shadow: inset 0 0 0 2px rgba(239, 34, 34, 0.25), 0px 0px 16px 4px rgba(163, 71, 71, 0.25);
+    }
+    #home_button {
+        width: 70%;
+        display: flex;
+        justify-content: right;
+    }
+    
+    body {
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+        overflow-y: hidden;
+        margin: 0;
+        background-color: rgb(130, 4, 4);
+        background-attachment: fixed;
+        background-position: 50%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-weight: 500;
+        font-size: 18px;
+        color: #fff
+    }
+    
+    * {
+        box-sizing: border-box !important;
+        user-select: none !important;
+        list-style-type: none !important
+    }
+    
+    *::selection {
+        background-color: rgba(177, 138, 52, 0.67)
+    }
+    
+    body>img {
+        opacity: 0;
+        position: absolute;
+        top: -32px;
+        left: -64px
+    }
+    
+    main {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        max-width: 95%;
+        transform: translate(-50%, -50%);
+        width: 420px;
+        display: flex;
+        flex-direction: column
+    }
+    
+    .box {
+        width: 100%;
+        padding: 8px;
+        background-color: rgba(20, 31, 30, .5);
+        border-style: solid;
+        border-color: rgba(0, 0, 0, .29);
+        border-width: 3px;
+        border-radius: 11px;
+        box-shadow: 0 4px 8px 2px rgba(0, 0, 0, .33)
+    }
+    
+    section.list {
+        height: 300px;
+        margin-bottom: 16px
+    }
+    
+    .boxTitle {
+        display: flex;
+        align-items: center;
+        padding-top: 2px;
+        padding-left: 4px;
+        padding-bottom: 8px
+    }
+    
+    .boxTitle span {
+        margin-left: 9px
+    }
+    
+    ul.items {
+        display: flex;
+        background-color: rgba(0, 0, 0, .33);
+        border-radius: 4px;
+        width: 100%;
+        height: calc(100% - 102px);
+        margin: 0;
+        padding: 3px;
+        padding-bottom: 0;
+        flex-direction: column;
+        overflow-y: auto;
+        scrollbar-width: thin;
+        scrollbar-color: #666 transparent
+    }
+    
+    ul.items li {
+        margin-bottom: 3px;
+        display: flex;
+        width: 100%;
+        min-height: 26px;
+        border-radius: 2px;
+        font-size: 16px;
+        align-items: center;
+        padding-left: 8px;
+        padding-bottom: 1px
+    }
+    
+    ul.items li:hover {
+        background-color: rgba(85, 85, 85, 8%)
+    }
+    
+    ul.items li.selected {
+        background-color: rgba(166, 86, 5, 0.25)
+    }
+    
+    li .tag {
+        background-color: rgba(58, 117, 114, .33);
+        border-radius: 2px;
+        font-size: 10px;
+        font-weight: 400;
+        padding-left: 4px;
+        padding-right: 4px;
+        margin-left: 6px;
+        margin-top: 1px;
+        pointer-events: none
+    }
+    
+    section.downloads .downloadButtons {
+        display: flex;
+        height: 30px
+    }
+    
+    .downloadButtons a {
+        font-size: 16px;
+        padding-bottom: 1px;
+        color: #fff;
+        text-decoration: none;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 3px;
+        min-width: 0
+    }
+    
+    .downloadButtons a.turquoise {
+        background-color: rgba(16, 212, 203, 0.67)
+    }
+    
+    .downloadButtons a.turquoise:hover {
+        background-color: rgba(117, 95, 59, 0.39)
+    }
+    
+    .downloadButtons a.turquoise:active {
+        background-color: rgba(59, 117, 114, .2);
+        outline: 3px solid rgba(59, 117, 114, .67)
+    }
+    
+    .downloadButtons a.dark {
+        margin-right: 8px;
+        background-color: rgba(255, 106, 0, 0.77)
+    }
+    
+    .downloadButtons a.dark:last-child {
+        margin-right: 0;
+        margin-left: 8px
+    }
+    
+    .downloadButtons a.dark:hover {
+        background-color: rgba(220, 94, 15, 0.437)
+    }
+    
+    .downloadButtons a.dark:active {
+        background-color: rgba(0, 0, 0, .15);
+        outline: 3px solid rgba(0, 0, 0, .29)
+    }
+</style>
 </html>
