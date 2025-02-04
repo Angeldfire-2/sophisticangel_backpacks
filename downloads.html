@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Descargas</title>
-    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/Angeldfire-2/sophisticangel_backpacks/refs/heads/main/textures/ui/logo.ico">
+    <link rel="icon" type="image/png" href="https://cdn.glitch.global/604f16b8-e50b-40c9-b6a4-fef27f907be4/public%2Ftextures%2Fui%2Flogo.ico?v=1738152179766">
     <script src="https://kit.fontawesome.com/468299f106.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -26,8 +26,85 @@
             <div class="downloadButtons"></div>
         </section>
     </main>
-    <script src="https://github.com/Angeldfire-2/sophisticangel_backpacks/blob/main/app.js"></script>
 </body>
+<script>
+var content = [{
+    title: "Sophisticangel Projects",
+    items: [
+        {
+            name: "Sophisticangel Backpack - v1.0.0",
+            tags: "newVersion",
+            links: ["https://huggingface.co/datasets/Angeldfire2/sophisticangel_backpack/resolve/main/sophisticangel%20backpack%20v1.0.0.mcaddon?download=true"],
+            buttons: ["Descargar New Version"]
+        },
+        {
+            name: "Sophisticangel Backpack - v0.5.2",
+            links: ["https://huggingface.co/datasets/Angeldfire2/sophisticangel_backpack/resolve/main/Sophisticangel%20Backpack%20v0.5.2%20MC-1.21.20%2B%20New.mcaddon?download=true"],
+            buttons: []
+        },
+        { 
+            name: "Sophisticangel Backpack - v0.5.1", 
+            links: ["https://huggingface.co/datasets/Angeldfire2/sophisticangel_backpack/resolve/main/Sophisticangel%20Backpack%20v0.5.1%20MC-1.21.20%2B.mcaddon?download=true"], 
+            buttons: [] 
+        },
+        { 
+            name: "Sophisticangel Backpack - v0.4.4", 
+            links: ["https://huggingface.co/datasets/Angeldfire2/sophisticangel_backpack/resolve/main/Sophisticangel%20Backpack%20v0.4.4%20MC-1.21.20%2B.mcaddon?download=true"], 
+            buttons: [] 
+        }
+    ]
+}];
+
+var itemContainer = document.querySelector("ul.items");
+var buttonContainer = document.querySelector("div.downloadButtons");
+var newContainer = document.querySelector("div.new");
+
+function loadItems() {
+    itemContainer.innerHTML = "";
+    newContainer.innerHTML = "";
+
+    let firstNewVersionItem = null;
+
+    content[0].items.forEach((item, index) => {
+        var listItem = document.createElement("li");
+        listItem.textContent = item.name;
+
+        if (item.tags === "newVersion") {
+            listItem.classList.add("newVersion");
+            newContainer.appendChild(listItem);
+            if (!firstNewVersionItem) firstNewVersionItem = { item, listItem };
+        } else {
+            itemContainer.appendChild(listItem);
+        }
+
+        listItem.addEventListener("click", () => selectItem(item, listItem));
+    });
+
+    if (firstNewVersionItem) {
+        selectItem(firstNewVersionItem.item, firstNewVersionItem.listItem);
+    } else if (itemContainer.firstChild) {
+        selectItem(content[0].items.find(item => !item.tags), itemContainer.firstChild);
+    }
+}
+
+function selectItem(item, listItem) {
+    buttonContainer.innerHTML = "";
+
+    document.querySelectorAll("ul.items li, div.new li").forEach(li => li.classList.remove("selected"));
+
+    listItem.classList.add("selected");
+
+    item.links.forEach((link, index) => {
+        var button = document.createElement("a");
+        button.textContent = item.buttons[index] || "Descargar";
+        button.href = link;
+        button.classList.add(index % 2 === 0 ? "dark" : "turquoise");
+        buttonContainer.appendChild(button);
+    });
+}
+
+loadItems();
+</script>
 <style>
     #downpe {
         position: absolute;
