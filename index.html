@@ -1,346 +1,354 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Descargas</title>
-    <link rel="icon" type="image/png" href="textures/ui/logo.ico">
-    <script src="https://kit.fontawesome.com/468299f106.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="start_screen.css">
+    <link rel="icon" type="image" href="/textures/ui/logo.ico">
+    <title>Sophisticangel Backpacks</title>
 </head>
-<style>
-    #downpe {
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    max-width: 95%;
-    transform: translate(-50%, -50%);
-    width: 620px;
-    display: flex;
-    flex-direction: column
-}
-#header{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    height: 90px;
-    box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.25), 0px 0px 16px 4px rgba(0, 0, 0, 0.25);
-    background-color: rgba(20,20,20,0.5);
-    border-radius: 8px;
-}
-
-#logo_stack h1 {
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    color: rgb(255, 255, 255);
-    font-size: 100%;
-}
-
-#button_download {
-    align-items: end;
-    flex-direction: column;
-    position: absolute;
-    display: flex;
-    width: 85%;
-    max-width: 740px;
-}
-
-#logo {
-    width: 50px;
-    height: 50px;
-}
-
-#logo_stack #text {
-    left: 10px;
-}
-
-#logo_stack {
-    display: flex;
-    align-items: center;
-    width: 95%;
-}
-
-#logo_stack_up {
-    display: flex;
-    align-items: center;
-    width: 90%;
-}
-
-.download {
-    height: 50px;
-    width: 53px;
-}
-.download_ {
-    height: 50px;
-    width: 53px;
-}
-#space_text_image {
-    width: 10px;
-}
-
-.download button {
-    border-radius: 6px;
-    align-items: center;
-    height: 100%;
-    width: 100%;
-    background-color: rgb(210, 30, 30);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 16px;
-    gap: 8px;
-    outline: none;
-    border: none;
-}
-.download button:hover {
-    cursor: pointer;
-    background-color: rgb(213, 108, 108);
-}
-
-.download button img {
-    width: 20px;
-}
-.download_ button img {
-    width: 20px;
-}
-
-
-
-
-
-.new {
-    background-color: rgba(20, 31, 30, .5);
-    border-style: solid;
-    border-color: rgba(0, 0, 0, .29);
-    border-width: 3px;
-    border-radius: 11px;
-    box-shadow: 0 4px 8px 2px rgba(0, 0, 0, .33);
-    margin-bottom: 10px;
-    display: flex;
-    justify-content: left;
-}
-.downloadButtons {
-    margin-bottom: 8px;
-}
-.new li {
-    margin: 10px;
-    font-family:Verdana, Geneva, Tahoma, sans-serif
-}
-.new li.selected {
-    color: rgb(0, 255, 221);
-}
-
-#home_button a{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 35px;
-    height: 35px;
-    border-radius: 11px;
-    box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.25), 0px 0px 16px 4px rgba(0, 0, 0, 0.25);
-    background-color: rgba(20,20,20,0.5);
-}
-#home_button a:hover{
-    box-shadow: inset 0 0 0 2px rgba(239, 34, 34, 0.25), 0px 0px 16px 4px rgba(163, 71, 71, 0.25);
-}
-#home_button {
-    width: 70%;
-    display: flex;
-    justify-content: right;
-}
-
-body {
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    overflow-y: hidden;
-    margin: 0;
-    background-color: rgb(130, 4, 4);
-    background-attachment: fixed;
-    background-position: 50%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    font-weight: 500;
-    font-size: 18px;
-    color: #fff
-}
-
-* {
-    box-sizing: border-box !important;
-    user-select: none !important;
-    list-style-type: none !important
-}
-
-*::selection {
-    background-color: rgba(177, 138, 52, 0.67)
-}
-
-body>img {
-    opacity: 0;
-    position: absolute;
-    top: -32px;
-    left: -64px
-}
-
-main {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    max-width: 95%;
-    transform: translate(-50%, -50%);
-    width: 420px;
-    display: flex;
-    flex-direction: column
-}
-
-.box {
-    width: 100%;
-    padding: 8px;
-    background-color: rgba(20, 31, 30, .5);
-    border-style: solid;
-    border-color: rgba(0, 0, 0, .29);
-    border-width: 3px;
-    border-radius: 11px;
-    box-shadow: 0 4px 8px 2px rgba(0, 0, 0, .33)
-}
-
-section.list {
-    height: 300px;
-    margin-bottom: 16px
-}
-
-.boxTitle {
-    display: flex;
-    align-items: center;
-    padding-top: 2px;
-    padding-left: 4px;
-    padding-bottom: 8px
-}
-
-.boxTitle span {
-    margin-left: 9px
-}
-
-ul.items {
-    display: flex;
-    background-color: rgba(0, 0, 0, .33);
-    border-radius: 4px;
-    width: 100%;
-    height: calc(100% - 102px);
-    margin: 0;
-    padding: 3px;
-    padding-bottom: 0;
-    flex-direction: column;
-    overflow-y: auto;
-    scrollbar-width: thin;
-    scrollbar-color: #666 transparent
-}
-
-ul.items li {
-    margin-bottom: 3px;
-    display: flex;
-    width: 100%;
-    min-height: 26px;
-    border-radius: 2px;
-    font-size: 16px;
-    align-items: center;
-    padding-left: 8px;
-    padding-bottom: 1px
-}
-
-ul.items li:hover {
-    background-color: rgba(85, 85, 85, 8%)
-}
-
-ul.items li.selected {
-    background-color: rgba(166, 86, 5, 0.25)
-}
-
-li .tag {
-    background-color: rgba(58, 117, 114, .33);
-    border-radius: 2px;
-    font-size: 10px;
-    font-weight: 400;
-    padding-left: 4px;
-    padding-right: 4px;
-    margin-left: 6px;
-    margin-top: 1px;
-    pointer-events: none
-}
-
-section.downloads .downloadButtons {
-    display: flex;
-    height: 30px
-}
-
-.downloadButtons a {
-    font-size: 16px;
-    padding-bottom: 1px;
-    color: #fff;
-    text-decoration: none;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 3px;
-    min-width: 0
-}
-
-.downloadButtons a.turquoise {
-    background-color: rgba(16, 212, 203, 0.67)
-}
-
-.downloadButtons a.turquoise:hover {
-    background-color: rgba(117, 95, 59, 0.39)
-}
-
-.downloadButtons a.turquoise:active {
-    background-color: rgba(59, 117, 114, .2);
-    outline: 3px solid rgba(59, 117, 114, .67)
-}
-
-.downloadButtons a.dark {
-    margin-right: 8px;
-    background-color: rgba(255, 106, 0, 0.77)
-}
-
-.downloadButtons a.dark:last-child {
-    margin-right: 0;
-    margin-left: 8px
-}
-
-.downloadButtons a.dark:hover {
-    background-color: rgba(220, 94, 15, 0.437)
-}
-
-.downloadButtons a.dark:active {
-    background-color: rgba(0, 0, 0, .15);
-    outline: 3px solid rgba(0, 0, 0, .29)
-}
-
-
-</style>
 <body>
-    <main id="downpe">
+    <div id="title" >
+        <br>
+        <img src="/textures/ui/title.png" alt="">
+        <br>
+    </div>
+    <main id="background">
+        <br>
+        <!-- Apartado de descarga -->
         <div id="header">
             <!-- Title Sophisticangel backpacks Download -->
             <div id="logo_stack">
-                <img id="logo" src="https://cdn.glitch.global/604f16b8-e50b-40c9-b6a4-fef27f907be4/public%2Ftextures%2Fui%2Flogo.png?v=1738152180202" alt="">
+                <img id="logo" src="/textures/ui/logo.png" alt="">
                 <div id="space_text_image"></div>
                 <div id="text">
-                    <h1>Sophisticangel backpack - New Version</h1>
+                    <h1>Sophisticangel backpack</h1>
+                    <h2>By Angeldfire2 | v1.0.0</h2>
                 </div>
             </div>
 
             <!-- Button Sophisticangel backpacks Download -->
             <div id="button_download">
                 <div id="buttons_pe">
-                    <form class="download" action="https://direct-link.net/1226909/sophisticangel-backpack">
+                    <form class="download" action="https://direct-link.net/1226909/sophisticangel-backpack" target="_blank">
                         <button>
-                            <img src="https://cdn.glitch.global/604f16b8-e50b-40c9-b6a4-fef27f907be4/public%2Ftextures%2Fui%2Farrow.png?v=1738152179276" alt="">
+                            <img src="/textures/ui/arrow.png" alt="">
                         </button>
                     </form>
                 </div>
             </div>
         </div>
+        <br>
+
+
+        <!-- Apartado de redes sociales -->
+        <div id="social_network">
+            <br>
+            <div>
+                <a class="button_social_network" href="https://discord.gg/SG438MSVhD" target="_blank">
+                    <img id="social_1" src="/textures/ui/social/discord.png" alt="">
+                </a> 
+                <div></div>
+                <a class="button_social_network" href="https://www.tiktok.com/@angeldfire2?_t=8q4nNxBBTM5&_r=1" target="_blank">
+                    <img id="social_2" src="/textures/ui/social/tiktok.png" alt="">
+                </a>
+                <div></div>
+                <a class="button_social_network" href="https://youtube.com/@angeldfire2?si=7rf0dmzZ98wuiJhb" target="_blank">
+                    <img id="social_3" src="/textures/ui/social/youtube.png" alt="">
+                </a>
+            </div>
+            <br>
+            <div>
+                <div></div>
+                <a class="button_social_2" href="https://discord.gg/SG438MSVhD" target="_blank">
+                    <img src="/textures/ui/social/angel.png" alt="">
+                </a>
+                <div></div>
+                <div></div>
+                <a class="button_social_2" href="https://discord.gg/Q23CCDR492" target="_blank">
+                    <img src="/textures/ui/social/dark.png" alt="">
+                </a>
+                <div></div>
+            </div>
+            <br>
+        </div><br>
+
+
+        <!-- Informacion sobre el addon -->
+         <div id="header_info">
+            <div id="content_info">
+
+                <br>
+                <div id="actualization">
+                    <br>
+                    <main id="content_update">
+                        <h2 style="color: aquamarine;">New Update v1.0.0:</h2>
+                        <div class="form_info">
+                            <div>
+                                <h4>● Se solucionó un problema que causaba lag en los mundos después de un tiempo predeterminado de uso. Ahora esto ya no sucede.</h4>
+                                <div class="separator"></div>
+                                <h4>● Se solucionó el problema al mejorar la mochila, en el cual se perdían los ítems almacenados. Ahora es necesario un yunque y un chip de mejora.</h4>
+                                <div class="separator"></div>
+                                <h4>● Se agregó la opción de colocar las mochilas en el suelo, así como también son compatibles con la tolva.</h4>
+                                <div class="separator"></div>
+                                <img class="image_info" src="/textures/new/suelo_backpacks.png" alt="">
+                                <h4>● Se agregó una variedad de skins personalizadas para la mochila, que incluyen desde skins de mobs hasta algunas que se añadieron como memes. Cabe recalcar que también se agregó la opción de teñir la mochila.</h4>
+                                <div class="separator"></div>
+                                <img class="image_info" src="/textures/new/skins.png" alt="">
+                                <h4>● Se agregó un nuevo aditamento que permite almacenar mochilas y shulkers dentro de la misma.</h4>
+                                <div class="separator"></div>
+                                <h4>● Se retiró el aditamento del hacha (muchos lo relacionaron con el Tree Capitator).</h4>
+                                <div class="separator"></div>
+                                <h4>● Se agregó el aditamento "Force", el cual otorga más fuerza al jugador.</h4>
+                                <div class="separator"></div>
+                                <h4>● Se mejoró el sistema de obtención de los discos personalizados, los cuales estarán disponibles en los loot del mundo, como aldeas, templos del desierto, etc. Las skins también se obtienen de igual manera.</h4>
+                                <div class="separator"></div>
+                                <h4>● Ahora la jukebox portátil es compatible con los discos de vanilla, además de que se mejoró su interfaz para mayor comodidad.</h4>
+                                <div class="separator"></div>
+                                <h4>● Se añadieron más idiomas para respetar la experiencia de los jugadores de otros países. Esto es configurable en el Behavior Pack.</h4>
+                                <div class="separator"></div>
+                                <img class="image_info" src="/textures/new/idioma.png" alt="">
+
+                            </div>
+                        </div>
+                    </main>
+                    <br>
+                </div>
+
+                <br><br><h1 class="style_text">𝐒𝐨𝐩𝐡𝐢𝐬𝐭𝐢𝐜𝐚𝐧𝐠𝐞𝐥 𝐁𝐚𝐜𝐤𝐩𝐚𝐜𝐤</h1>
+                <div class="separator"></div>
+                <h4>
+                    ¡Resuelva la falta de espacio en el inventario con nuevas mochilas mejoradas! Este complemento agrega al juego mochilas de cuero, cobre, hierro, oro, diamantes y netherite, cada una con más capacidad que la anterior. Además, estas mochilas se pueden personalizar y mejorar equipándolas con diversos accesorios. Diseñado para abordar uno de los problemas más comunes en Minecraft Bedrock, la falta de espacio en el inventario, este complemento es la solución perfecta para quienes aman explorar y coleccionar sin límites. ¡Lleva tu aventura al siguiente nivel y nunca más te quedes sin espacio!
+                </h4>
+                <br><br>
+                <div class="title_info">
+                    <h2>👾 ⋄ —〈 Sophisticangel Backpack 〉— ⋄ 👾</h2>
+                </div>
+                <h4>
+                    Este es un complemento creado por @angeldfire2 con la ayuda de Angel's Community y algo de cooperación de los miembros de DarkBasementStudio. El complemento se basa esencialmente en el mod Java Sophisticated Backpacks creado por @P3pp3rF1y. Un agradecimiento especial para ellos por permitir el lanzamiento de este complemento.
+                </h4>
+                <br>
+                <img class="image_info" src="/textures/sophisticangel_backpack_2.png" alt="">
+                <br><br>
+                <h3 class="subraya">Creador</h3>
+                <h4>Angeldfire2</h4>
+                <br>
+
+                <h3 style="color: chocolate; font-size: 14px;" class="subraya">Agradecimiento especial por la ayuda:</h3>
+                <h3 class="subraya">DarkbasementStudio</h3>
+                <h4>ꗃ⋆ ࣪ .Developer.‹𝟥</h4>
+                <h4>SenyuGamer</h4>
+                <h4>Manolo394</h4>
+
+                <br>
+                <h3 class="subraya">Angel's Comunity</h3>
+                <h4>EL RISAS XD</h4>
+                <h4>!ThekarTez</h4>
+                <h4>St4r crack</h4>
+                <h4>crissafio el mismísimo</h4>
+                <h4>JebusArt</h4>
+                <h4>Obed Millan</h4>
+                <h4>SirDrogas</h4>
+                <br><br>
+
+                <div class="title_info">
+                    <h2>👾 ⋄ —〈 Content 〉— ⋄ 👾</h2>
+                </div>
+                <h3>El addon Incluye:</h3><br>
+                <h3 class="subraya">Backpacks</h3>
+                <div class="form_info">
+                    <div>
+                        <h4>● Leather Backpack</h4>
+                        <h4>● Copper Backpack</h4>
+                        <h4>● Iron Backpack</h4>
+                        <h4>● Gold Backpack</h4>
+                        <h4>● Diamond Backpack</h4>
+                        <h4>● Netherite Backpack</h4>
+                    </div>
+                </div><br>
+                <h3 class="subraya">Aditaments</h3>
+                <div class="form_info">
+                    <div>
+                        <h4>● Portable Farming</h4>
+                        <h4>● Auto Food</h4>
+                        <h4>● Portable Furnace lvl 1 and lvl 2</h4>
+                        <h4>● Portable Jukebox</h4>
+                        <h4>● Extra Hearts</h4>
+                        <h4>● Auto Tree Felling</h4>
+                        <h4>● Item Magnet lvl 1 and lvl 2</h4>
+                        <h4>● Mining Speed</h4>
+                        <h4>● Dynamic Torch</h4>
+                        <h4>● Auto Transfer Items</h4>
+                        <h4>● Aquatic Breathing</h4>
+                        <h4>● Container Liquid</h4>
+                        <br>
+                        <h4>Discos de música para la mochila</h4>
+                    </div>
+                </div><br>
+                <h3 class="subraya">Backpack Skins</h3>
+                <div class="form_info">
+                    <div>
+                        <h4>● AmongUs</h4>
+                        <h4>● Ajolote</h4>
+                        <h4>● Iron Golem</h4>
+                        <h4>● Snow Golem</h4>
+                        <h4>● Jaar</h4>
+                        <h4>● Manolo</h4>
+                        <h4>● Nutria</h4>
+                        <h4>● Bear</h4>
+                        <h4>● Pig</h4>
+                        <h4>● Rappi</h4>
+                        <h4>● Warden</h4>
+                        <h4>● Wither</h4>
+                        <h4>● Fox</h4>
+                        <h4>● Custom Colors</h4>
+                    </div>
+                </div><br>
+                <img class="image_info" src="/textures/sophisticangel_backpack.png" alt="">
+                <br><br><br>
+                <div class="title_info">
+                    <h2>👾 ⋄ —〈 Aditaments 〉— ⋄ 👾</h2>
+                </div>
+
+                <h3 class="subraya">Portable Farming</h3>
+                <div class="form_info">
+                    <div>
+                        <h4>Cuando está equipado, este accesorio agrega 3 ranuras a la mochila para semillas, que se plantan automáticamente cuando caminas sobre tierra cultivada.</h4>
+                    </div>
+                </div>
+                <br>
+                <h3 class="subraya">Auto Food</h3>
+                <div class="form_info">
+                    <div>
+                        <h4>Cuando está equipado, este accesorio permite al jugador almacenar comida en la mochila, y se consumirá automáticamente cuando el jugador tenga poca salud.</h4>
+                    </div>
+                </div>
+                <br>
+                <h3 class="subraya">Portable Furnace</h3>
+                <div class="form_info">
+                    <div>
+                        <h4>Cuando está equipado, este accesorio agrega un horno que se puede llevar a cualquier lugar, lo que le permite cocinar directamente desde la mochila.</h4>
+                    </div>
+                </div>
+                <br>
+                <h3 class="subraya">Portable Furnace Level 2</h3>
+                <div class="form_info">
+                    <div>
+                        <h4>Cuando está equipado, este accesorio agrega un horno con 4 ranuras adicionales para combustible.</h4>
+                    </div>
+                </div>
+                <br>
+                <h3 class="subraya">Portable Jukebox</h3>
+                <div class="form_info">
+                    <div>
+                        <h4>Cuando está equipado, este accesorio agrega un reproductor de música portátil que solo puede reproducir discos específicos para la mochila. (El sonido es individual para cada reproductor).</h4>
+                    </div>
+                </div>
+                <br>
+                <h3 class="subraya">Extra Hearts</h3>
+                <div class="form_info">
+                    <div>
+                        <h4>Cuando está equipado, este accesorio le otorga al jugador 4 corazones de salud adicionales.</h4>
+                    </div>
+                </div>
+                <br>
+                <h3 class="subraya">Item Magnet</h3>
+                <div class="form_info">
+                    <div>
+                        <h4>Cuando está equipado, este accesorio atrae objetos hacia el jugador dentro de un radio de 6 bloques.</h4>
+                    </div>
+                </div>
+                <br>
+                <h3 class="subraya">Item Magnet Level 2</h3>
+                <div class="form_info">
+                    <div>
+                        <h4>Cuando está equipado, agrega un filtro de objetos que atrae solo objetos filtrados dentro de un radio de 6 bloques a la mochila.</h4>
+                    </div>
+                </div>
+                <br>
+                <h3 class="subraya">Mining Speed</h3>
+                <div class="form_info">
+                    <div>
+                        <h4>Cuando está equipado, este accesorio le otorga al jugador el efecto Velocidad de minería IV.</h4>
+                    </div>
+                </div>
+                <br>
+                <h3 class="subraya">Dynamic Torch</h3>
+                <div class="form_info">
+                    <div>
+                        <h4>Cuando está equipado, este accesorio emite luz alrededor del jugador.</h4>
+                    </div>
+                </div>
+                <br>
+                <h3 class="subraya">Auto Transfer Items</h3>
+                <div class="form_info">
+                    <div>
+                        <h4>Cuando está equipado, este accesorio almacena automáticamente elementos del suelo en la mochila si el inventario del jugador está lleno.</h4>
+                    </div>
+                </div>
+                <br>
+                <h3 class="subraya">Aquatic Breathing</h3>
+                <div class="form_info">
+                    <div>
+                        <h4>Cuando está equipado, este accesorio le otorga al jugador la capacidad de respirar bajo el agua.</h4>
+                    </div>
+                </div>
+                <br>
+                <h3 class="subraya">Container Liquid</h3>
+                <div class="form_info">
+                    <div>
+                        <h4>Cuando está equipado, este accesorio le agrega a la mochila dos contenedores de liquidos (agua y lava)</h4>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <img class="image_info" src="/textures/sophisticangel_backpack_4.png" alt="">
+                <br><br><br>
+
+                <div class="indicator">
+                    <h2 class="subraya">Versiones de Minecraft compatibles</h2>
+                </div>
+                <div class="separator"></div>
+                <div class="version">
+                    <div class="form_version">
+                        <h4 class="text_version">1.21.20</h4>
+                    </div>
+                    <div class="separator"></div>
+                    <div class="form_version">
+                        <h4 class="text_version">1.21.21</h4>
+                    </div>
+                    <div class="separator"></div>
+                    <div class="form_version">
+                        <h4 class="text_version">1.21.22</h4>
+                    </div>
+                    <div class="separator"></div>
+                    <div class="form_version">
+                        <h4 class="text_version">1.21.23</h4>
+                    </div>
+                    <div class="separator"></div>
+                    <div class="form_version">
+                        <h4 class="text_version">1.21.30+</h4>
+                    </div>
+                </div><br><br>
+                
+                <div class="indicator">
+                    <h2 class="subraya">Dispositivos compatibles</h2>
+                </div>
+                <div class="separator"></div>
+                <div class="version">
+                    <div class="form_version" style="width: 100px;">
+                        <h4 class="text_version">Android</h4>
+                    </div>
+                    <div class="separator"></div>
+                    <div class="form_version">
+                        <h4 class="text_version">iOS</h4>
+                    </div>
+                    <div class="separator"></div>
+                    <div class="form_version" style="width: 120px;">
+                        <h4 class="text_version">Win 10/11</h4>
+                    </div>
+                </div><br><br><br>
+            </div>
+         </div>
+         <br>
     </main>
-    <script src="/app.js"></script>
 </body>
 </html>
